@@ -1,5 +1,4 @@
 import express from 'express';
-import bodyParser from 'body-parser';
 import cors from 'cors';
 import connectDB from './config/db';
 import api from './routes/api';
@@ -9,7 +8,7 @@ const app = express();
 
 // Middleware
 app.use(cors()); // Enable CORS
-app.use(bodyParser.json()); // Parse JSON request bodies
+app.use(express.json()); // Parse JSON request bodies
 
 // Route
 app.use('/api', api);
